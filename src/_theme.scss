@@ -1,0 +1,73 @@
+//Màu cơ bản
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #f49351 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+$gray: #dee5f1 !default;
+
+$white: #ffffff !default;
+$gray-100: #eef2f7 !default;
+$gray-200: #dee5f1 !default;
+$gray-300: #bdc6d8 !default;
+$gray-400: #98a0b3 !default;
+$gray-500: #697083 !default;
+$gray-600: #4f5771 !default;
+$gray-700: #39415f !default;
+$gray-800: #282e4e !default;
+$gray-900: #1c2141 !default;
+$black: #171447 !default;
+
+//Bộ màu giao diện
+$primary: #007bff !default;
+$danger: #db4956 !default;
+$warning: #fecb2e !default;
+$success: #0caf60 !default;
+$info: #17a2b8 !default;
+$secondary: #dee5f1 !default;
+
+//Code block
+$bg-codeblock: #505669 !default;
+$bg-codeblock-toolbar: #3d4255 !default;
+$color-method-api: #85d996 !default;
+$color-method-post: #85d996 !default;
+$color-method-get: #85d996 !default;
+$color-method-put: #85d996 !default;
+$color-method-delete: #85d996 !default;
+$color-method-update: #85d996 !default;
+$color-lable-copyclipboard: #abcdfa !default;
+$color-url: #a3a3a3 !default;
+$color-cursor-mouse-edit: #ffffff8a !default;
+$color-textarea: #ffffff !default;
+$step-pending: $gray-500;
+$step-active: $primary;
+$step-done: $success;
+$btn-orange: $orange;
+$btn-orange-hover: #e28a4e;
+
+//Màu tùy chọn thêm
+$body_bg: #f1f3ff !default;
+$border_color_primary: #f1f3ff !default;
+$input_disabled: #e9ecef !default;
+$input_not_disabled: #e9ecef !default;
+$bg-badge-light-new: #e9ecef !default;
+
+$header_table_bg: #dee5f1;
+$ng_select_disabled: #dee5f1;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  // "light":      $light,
+  // "dark":       $dark,
+  "black": $black,
+);

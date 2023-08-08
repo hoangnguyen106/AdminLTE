@@ -1,0 +1,99 @@
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">
+      {{ addProject.value.id != null ? "Edit project" : "Add Project" }}
+    </h4>
+    <button
+      type="button"
+      class="btn-close close pull-right"
+      aria-label="Close"
+      (click)="modalRef?.hide()"
+    >
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-primary">
+          <form [formGroup]="addProject" (ngSubmit)="onAddProject()">
+            <div class="card-body">
+              <div class="form-group">
+                <label for="inputName">Project Name</label>
+                <input
+                  type="text"
+                  id="inputName"
+                  class="form-control"
+                  formControlName="projectName"
+                />
+              </div>
+              <div class="form-group">
+                <label for="inputDescription">Project Description</label>
+                <input
+                  type="text"
+                  id="inputDescription"
+                  class="form-control"
+                  formControlName="description"
+                />
+              </div>
+              <div class="form-group">
+                <label for="files">Team Members</label>
+                <input
+                  type="file"
+                  id="files"
+                  multiple
+                  class="form-control"
+                  formControlName="teamMember"
+                  (change)="onFileChange($event)"
+                />
+              </div>
+              <div class="form-group">
+                <label for="inputProgress">Progress</label>
+                <input
+                  type="number"
+                  id="inputProgress"
+                  class="form-control"
+                  formControlName="progress"
+                />
+              </div>
+              <div class="form-group">
+                <label for="inputStatus">Status</label>
+                <select
+                  id="inputStatus"
+                  class="form-control custom-select"
+                  formControlName="status"
+                >
+                  <option selected disabled>Select one</option>
+                  <option>Canceled</option>
+                  <option>Success</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="inputCreated">Created</label>
+                <input
+                  type="text"
+                  id="inputCreated"
+                  class="form-control"
+                  formControlName="created"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <button
+                  type="submit"
+                  class="btn btn-success float-right"
+                  [disabled]="addProject.invalid"
+                >
+                  Create Project
+                </button>
+              </div>
+            </div>
+          </form>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+    </div>
+  </div>
+</ng-template>
