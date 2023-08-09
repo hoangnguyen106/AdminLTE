@@ -26,8 +26,7 @@ export class ProductListComponent implements OnInit {
 
   constructor(
     private projectService: ProjectService,
-    private toastrService: ToastrService,
-    activateRoute: ActivatedRoute
+    private toastrService: ToastrService
   ) {}
   ngOnInit(): void {
     this.loadProject();
@@ -37,9 +36,6 @@ export class ProductListComponent implements OnInit {
     this.projectService.getAllProject().subscribe((res) => {
       this.projects = res;
       console.log(res);
-      res.map((a) => {
-        console.log('teamMember===>', a.teamMember);
-      });
     });
   }
 
