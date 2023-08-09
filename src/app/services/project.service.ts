@@ -24,4 +24,10 @@ export class ProjectService {
   deleteProject(id: any): Observable<Project> {
     return this.http.delete<Project>(`http://localhost:3000/projects/${id}`);
   }
+
+  filterProject(searchTerm: string): Observable<Project> {
+    return this.http.get<Project>(
+      `http://localhost:3000/projects?q=${searchTerm}`
+    );
+  }
 }

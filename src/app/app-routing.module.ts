@@ -32,9 +32,6 @@ const routes: Routes = [
       {
         path: 'product-list',
         component: ProductListComponent,
-        children: [
-          { path: 'search/:searchTerm', component: ProductListComponent },
-        ],
       },
       {
         path: 'product-add',

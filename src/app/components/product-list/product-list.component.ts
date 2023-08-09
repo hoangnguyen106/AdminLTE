@@ -15,6 +15,8 @@ export class ProductListComponent implements OnInit {
   @ViewChild(ModalComponent) template!: ModalComponent;
 
   projects: Project[] = [];
+  allProjects: Project[] = [];
+  searchTerm: '';
 
   //Pagination
   page: number = 1;
@@ -35,6 +37,7 @@ export class ProductListComponent implements OnInit {
   loadProject() {
     this.projectService.getAllProject().subscribe((res) => {
       this.projects = res;
+      this.allProjects = this.projects;
       console.log(res);
     });
   }
@@ -61,5 +64,10 @@ export class ProductListComponent implements OnInit {
 
   onEditModal(code: any) {}
 
-  // Search
+  // Search project
+  search(value: string): void {
+    this.projects = this.allProjects.filter((val) =>
+      val.projectName.toLowerCase().includes(value)
+    );
+  }
 }

@@ -43,6 +43,26 @@
       </div>
     </div>
     <div class="card-body p-0">
+      <div class="col-md-4">
+        <div class="input-group">
+          <input
+            class="form-control border-end-0 border rounded-pill"
+            type="search"
+            value="search"
+            id="example-search-input"
+            [(ngModel)]="searchTerm"
+            (input)="search(searchTerm)"
+          />
+          <span class="input-group-append">
+            <button
+              class="btn btn-outline-secondary bg-white border-bottom-0 border rounded-pill ms-n5"
+              type="button"
+            >
+              <i class="fa fa-search"></i>
+            </button>
+          </span>
+        </div>
+      </div>
       <app-modal></app-modal>
       <table class="table table-striped projects">
         <thead>
