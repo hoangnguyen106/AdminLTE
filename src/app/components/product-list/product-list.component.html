@@ -43,6 +43,7 @@
       </div>
     </div>
     <div class="card-body p-0">
+      <app-modal></app-modal>
       <table class="table table-striped projects">
         <thead>
           <tr>
@@ -114,19 +115,15 @@
               >
             </td>
             <td class="project-actions text-right">
-              <a class="btn btn-primary btn-sm" type="button">
-                <i class="fas fa-folder"> </i>
-                Add
-              </a>
-              <a class="btn btn-info btn-sm">
+              <a class="btn btn-info btn-sm" (click)="onEditModal(item.id)">
                 <i class="fas fa-pencil-alt"> </i>
                 Edit
               </a>
               <a
                 class="btn btn-danger btn-sm"
+                (click)="onDeleteProject(item.id)"
                 (click)="onDeleteProject(item['id'])"
               >
-                <i class="fas fa-trash"> </i>
                 Delete
               </a>
             </td>

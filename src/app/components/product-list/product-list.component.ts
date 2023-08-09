@@ -1,8 +1,10 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { ProjectService } from 'src/app/services/project.service';
 import { Project } from 'src/app/shared/models/project.model';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ModalComponent } from 'src/app/shared/modal/modal.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -10,8 +12,9 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
+  @ViewChild(ModalComponent) template!: ModalComponent;
+
   projects: Project[] = [];
-  editMode = false;
 
   //Pagination
   page: number = 1;
@@ -20,12 +23,11 @@ export class ProductListComponent implements OnInit {
   tableSizes: any = [3, 6, 9, 12];
 
   //Popup
-  modalRef?: BsModalRef;
 
   constructor(
     private projectService: ProjectService,
     private toastrService: ToastrService,
-    private modalService: BsModalService
+    activateRoute: ActivatedRoute
   ) {}
   ngOnInit(): void {
     this.loadProject();
@@ -61,8 +63,7 @@ export class ProductListComponent implements OnInit {
       });
   }
 
-  //Open modal Add and Edit
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
-  }
+  onEditModal(code: any) {}
+
+  // Search
 }
